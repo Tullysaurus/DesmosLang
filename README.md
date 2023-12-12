@@ -1,14 +1,14 @@
 # DesmosLang
 ## A Turing-Complete programming language written fully in Desmos
-### View the graph here: https://www.desmos.com/calculator/rddues5omp
+### View the graph here: https://www.desmos.com/calculator/n7ovjgbhod
 
 You can view the full set of instructions in 
 The graph already has a program loaded, which I will explain below.
 
-## [](Code.txt )Here is the assembly code for the pre-loaded program
+Here is the assembly code for the pre-loaded program:
 ```
 ; This is a simple program to square a number (starting at 2)
-; 3 times, so it should return 2^2^2^2 = 65536 in address 16
+; 3 times, so it should return 2^2^2^2 = 65536 in address 16.
 ; Theres a reference sheet for the instructions in the "Encoder.py" file
 
 set %4 to 12
