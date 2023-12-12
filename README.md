@@ -2,7 +2,7 @@
 ## A Turing-Complete programming language written fully in Desmos
 ### View the graph here: https://www.desmos.com/calculator/n7ovjgbhod
 
-You can view the full set of instructions [here](Instruction Set.txt)
+You can view the full set of instructions [here](Instruction_Set.txt)
 
 The graph already has a program loaded, which I will explain below.
 
