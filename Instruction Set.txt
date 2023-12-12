@@ -1,0 +1,66 @@
+>> REFERENCES <<
+    &#  : value of %#    (not required)
+    %#  : address #      (not required)
+    ;   : comment
+    
+    The "&" and "%" are not required, but are just there to make it easier to understand the code. They get filtered out automatically.
+>> REFERENCES <<
+
+>> MEMORY <<
+    %1  : Program Pointer (index of what instruction we need to run)
+    %2  : Whether not the program is running.
+    %3  : Argument Index (Not Typical) (index of the argument(s) that we need to use)
+    %4  : Output (Where most operations store their results)
+    %-1 : (The last byte) a redundant byte because desmos is stupid
+>> MEMORY <<
+
+########## INSTRUCTIONS ##########
+
+>> TEMPLATE <<
+    (Instruction Name) (OPCode, (Number of arguments the instruction requires) ): (The shortened name of the instruction; what you write in "Code.txt")
+>> TEMPLATE <<
+
+
+Read (OPCode 1, 1 args(s)): read
+    Gets the value from &arg1 and stores it in %4.
+
+Allocate (OPCode 2, 1 arg(s)): allc
+    Allocates &arg1 bytes to memory.
+
+Write (OPCode 3, 2 arg(s)): set
+    Writes arg2 to %arg1.
+
+Jump (OPCode 4, 1 arg(s)): jmp
+    Jumps to &arg1.
+
+Restart (OPCode 5, 0 arg(s)): rst
+    Restarts the program from scratch, resetting the memory.
+
+Jneq (OPCode 6, 3 arg(s)): jne
+    Jumps to arg3 if &arg1 does not equal &arg2.
+
+Add (OPCode 7, 2 arg(s)): add
+    Adds &arg2 to &arg1 and stores the result in %4.
+
+Sub (OPCode 8, 2 arg(s)): sub
+    Subtracts &arg2 from &arg1 and stores the result in %4.
+
+Multiply (OPCode 9, 2 arg(s)): mult
+    Multiplies &arg1 and &arg and stores the result in %4.
+
+Increment (OPCode 10, 1 arg(s)): inc
+    Increments &arg1 by 1 and stores the result in %arg1.
+
+Decrement (OPCode 11, 1 arg(s)): dec
+    Decrements &arg1 by 1 and stores the result in %arg1.
+
+Divide (OPCode 12, 2 arg(s)): div
+    Divides &arg1 by &arg2 with 8 digits of accuracy and stores the result in %4
+
+Move (OPCode 13, 2 arg(s)): mov
+    Writes value of #arg1 to &arg2.
+
+Halt (OPCode 14, 0 arg(s)):
+    Completely stops the program and resets the program pointer.
+
+########## INSTRUCTIONS ##########
