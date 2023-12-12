@@ -36,3 +36,4 @@ This gives us the following:
 Program Memory:  [3, 2, 3, 3, 3, 6, 14, 9, 13, 11, 3, 4]
 Program Args:  [4, 12, 0, 4, 0, 0, 15, 3, 0, 16, 2, 0, 4, 0, 0, 15, 4, 8, 1, 0, 0, 16, 16, 0, 16, 4, 0, 15, 0, 0, 4, 5, 0, 4, 0, 0]
 ```
+Which we plug into the graph inside the "► Memory" Folder.
