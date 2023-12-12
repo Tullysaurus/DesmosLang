@@ -5,7 +5,7 @@
 You can view the full set of instructions in 
 The graph already has a program loaded, which I will explain below.
 
-[Here is the assembly code for the pre-loaded program](Code.txt)
+## [](Code.txt )Here is the assembly code for the pre-loaded program
 ```
 ; This is a simple program to square a number (starting at 2)
 ; 3 times, so it should return 2^2^2^2 = 65536 in address 16
