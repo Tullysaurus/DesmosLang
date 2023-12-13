@@ -1,6 +1,6 @@
 # DesmosLang
 ## A Turing-Complete programming language written fully in Desmos
-### View the graph here: https://www.desmos.com/calculator/fumchvitdb
+### View the graph here: https://www.desmos.com/calculator/ilfqcak6i9
 
 The graph already has a program loaded, which I will explain below.
 
