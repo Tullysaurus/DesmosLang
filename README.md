@@ -6,39 +6,35 @@ The graph already has a program loaded, which I will explain below.
 
 Here is the assembly code for the pre-loaded program:
 ```
-; This is a simple program to square a number (starting at 2)
-; 3 times, so it should return 2^2^2^2 = 65536 in address 16.
+; Fibonacci Sequence
 
-set %4 to 12                ; Set the amount of memory we want to allocate
-allc %4                     ; Allocate 12 bytes of memory (4 to start + 12 = 16 bytes total)
+set %4 to 12            ; Amount of memory to allocate
+allc %4                 ; Allocate %4 bytes of memory
 
-set %15 to 3                ; How many times to loop
-set %16 to 2                ; Initialize %16 to 2
+set %5 to 0             ; Variable A
+set %6 to 1             ; Variable B
+set %7 to 0             ; Sum
 
-set %4 to 0
-jmp to 8 if %15 neq %4      ; Skip the halt instruction if %15 is not equal to 0
+add %5 to %6            ; Calculate the sum
+mov %4 to %7            ; Move The Sum
 
-hlt                         ; Stop the program if the loop ends
+mov %6 to %5            ; Update Variable A
+mov %7 to %6            ; Update Variable B
 
-mult %16 and %16            ; Square &16
-mov %4 to %16               ; Move the result back into %16
-
-dec %15                     ; Decrement %15
-
-set %4 to 5                 ; Set the target jump address
-jmp %4                      ; Jump to the target jump address
+set %4 to 6             ; Where to jump to
+jmp to %4               ; Execute the jump
 ```
 
 This gives us the following:
 ```
-Program Memory:  [3, 2, 3, 3, 3, 6, 14, 9, 13, 11, 3, 4]
-Program Args:  [4, 12, 0, 4, 0, 0, 15, 3, 0, 16, 2, 0, 4, 0, 0, 15, 4, 8, 1, 0, 0, 16, 16, 0, 16, 4, 0, 15, 0, 0, 4, 5, 0, 4, 0, 0]
+Program Memory:  [3, 2, 3, 3, 3, 7, 13, 13, 13, 3, 4]
+Program Args:  [4, 12, 0, 4, 0, 0, 5, 0, 0, 6, 1, 0, 7, 0, 0, 5, 6, 0, 7, 4, 0, 5, 6, 0, 6, 7, 0, 4, 6, 0, 4, 0, 0]
 ```
 Which we plug into the graph inside the "► Memory" Folder. And run the program
 
 # Instruction Set
 ```
-Any time theres a "&" or a "%" in front of a number,
+Any time there's a "&" or a "%" in front of a number,
 that is only there to make the code easier to read.
 
     &#  : value of %#        (not required)
